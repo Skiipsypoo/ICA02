@@ -2,21 +2,15 @@ package slice
 
 //import "fmt"
 
-// AllocateVar har INN-argument b
-// b - antall bytes brukeren ønsker å allokere
-// Returnerer en slice av type []byte
-//
+// AllocateVar returnerer en ny slice med lengde og kapasitet av parameter int b
 func AllocateVar(b int) []byte {
-	// Kode for Oppgave 5a
 	var slice []byte
 	slice = make([]byte, b)
 	return slice
 }
 
-// AllocateMake tar lengde og kapasitet som b og lager en ny slice
-//
+// AllocateMake returnerer en ny slice med lengde og kapasitet av parameter int b
 func AllocateMake(b int) []byte {
-	// Kode for Oppgave 5a
 	slice := make([]byte, b)
 	return slice
 }
@@ -28,9 +22,9 @@ func Reslice(slc []byte, lidx int, uidx int) []byte {
 	return slice
 }
 
-// CopySlice ???
+// CopySlice copies a slice
+// Source https://github.com/go101/go101/wiki/How-to-perfectly-clone-a-slice%3F
 func CopySlice(slice []byte) []byte {
-	// Source https://github.com/go101/go101/wiki/How-to-perfectly-clone-a-slice%3F
 	copy := append(slice[:0:0], slice...)
 	return copy
 }

@@ -7,6 +7,6 @@ import (
 )
 
 func main() {
-	iso.IterateOverASCIIStringLiteral(iso.GenerateExtendedASCIIStringLiteral())
+	iso.IterateOverExtendedASCIIStringLiteral(iso.GenerateExtendedASCIIStringLiteral())
 	fmt.Println(ascii.GreetingASCII())
 }

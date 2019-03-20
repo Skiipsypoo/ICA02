@@ -8,14 +8,14 @@ import (
 // GenerateExtendedASCIIStringLiteral ...
 func GenerateExtendedASCIIStringLiteral() string {
 	var buffer bytes.Buffer
-	for i := '\u007F'; i <= '\u00FF'; i++ {
+	for i := '\u0080'; i <= '\u00FF'; i++ {
 		buffer.WriteString(fmt.Sprintf("%c", i))
 	}
 	return buffer.String()
 }
 
 // IterateOverASCIIStringLiteral ...
-func IterateOverASCIIStringLiteral(sl string) {
+func IterateOverExtendedASCIIStringLiteral(sl string) {
 	for _, c := range sl {
 		fmt.Printf("%X %q %b \n", c, c, c)
 	}
@@ -23,5 +23,9 @@ func IterateOverASCIIStringLiteral(sl string) {
 
 // GreetingExtendedASCII ...
 func GreetingExtendedASCII() string {
-	return "Salut, ça va °-) Κοστίζει ​ €50"
+	greeting := "Salut, ça va °-) Κοστίζει ​ €50"
+	for _, c := range []byte(greeting) {
+		fmt.Printf("%c", c)
+	}
+	return greeting
 }

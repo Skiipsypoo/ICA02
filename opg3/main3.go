@@ -12,7 +12,7 @@ var file1, file2, file3 = "../files/lang01.wl",
 	"../files/lang03.wl"
 
 func main() {
-	decodeTreasure()
+	analyseFiles()
 }
 
 func analyseFiles() {
@@ -30,7 +30,7 @@ func decodeTreasure() {
 	treasure.PrintTreasureUTF8(treasureStr)
 }
 
-func testThings() {
+func printDifferentFormats() {
 	s := "\xbd\xb2\x3d\xbc\x20\xe2\x8c\x98"
 
 	fmt.Println("Printf with %s:")
